@@ -15,7 +15,7 @@ class ParkingTest extends TestCase
 
     public function testGetLength()
     {
-        $parking = new Parking();
+        $parking = new Parking('111');
         $this->assertEquals('111', $parking->getLength());
     }
 }
