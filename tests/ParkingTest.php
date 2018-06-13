@@ -12,7 +12,7 @@ class ParkingTest extends TestCase
         $parking = new Parking();
         $this->assertInstanceOf(get_class($parking), $parking);
     }
-    
+
     public function testGetLenght()
     {
         $parking = new Parking();
