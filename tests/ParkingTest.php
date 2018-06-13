@@ -12,4 +12,16 @@ class ParkingTest extends TestCase
         $parking = new Parking();
         $this->assertInstanceOf(get_class($parking), $parking);
     }
+    
+    public function testGetLenght()
+    {
+        $parking = new Parking();
+        $this->assertEquals('10', $parking->getLength());
+    }
+
+    public function testGetWidth()
+    {
+        $parking = new Parking();
+        $this->assertEquals('200', $parking->getWidth());
+    }
 }
