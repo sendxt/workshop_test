@@ -24,12 +24,6 @@ use PHPUnit\Framework\TestCase;
 
 class CarTest extends TestCase
 {
-    public function testCreate()
-    {
-        $car = new Car();
-        $this->assertInstanceOf(Car::class, $car);
-    }
-
     public function testGetSize()
     {
         $car = new Car();
