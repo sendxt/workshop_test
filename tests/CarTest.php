@@ -29,4 +29,12 @@ class CarTest extends TestCase
         $car = new Car();
         $this->assertInstanceOf(Car::class, $car);
     }
+
+    public function testGetSize()
+    {
+        $car = new Car();
+        $car->setSize(10);
+
+        $this->assertEquals('10', $car->getSize());
+    }
 }
