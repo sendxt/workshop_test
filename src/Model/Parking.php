@@ -6,6 +6,18 @@ class Parking
 {
     private $area;
 
+    private $cars = [];
+
+    public function addCar(Car $car)
+    {
+        $this->cars[] = $car;
+    }
+
+    public function getCars(): array
+    {
+        return $this->cars;
+    }
+
     /**
      * @return int
      */
@@ -25,6 +37,4 @@ class Parking
 
         return $this;
     }
-
-
 }
