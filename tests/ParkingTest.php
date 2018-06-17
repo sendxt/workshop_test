@@ -19,6 +19,7 @@ declare(strict_types=1);
 
 namespace Tests;
 
+use Model\Car;
 use Model\Parking;
 use PHPUnit\Framework\TestCase;
 
@@ -30,5 +31,16 @@ class ParkingTest extends TestCase
         $parking->setArea(20);
 
         $this->assertEquals('20', $parking->getArea());
+    }
+
+    public function testAddCar()
+    {
+        $car = new Car();
+        $car->setSize(5);
+
+        $parking = new Parking();
+        $parking->setArea(30);
+
+        $parking->addCar($car);
     }
 }
