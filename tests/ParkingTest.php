@@ -24,7 +24,7 @@ class ParkingTest extends TestCase
         $car->setSize(30);
 
         $car2 = new Car();
-        $car2->setSize(20);
+        $car2->setSize(18);
 
         $parking = new Parking();
         $parking->setArea(50);
