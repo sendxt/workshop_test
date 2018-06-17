@@ -4,15 +4,44 @@ namespace Model;
 
 class Parking
 {
-    private $area;
+    /**
+     * @var int
+     */
+    private $area = 30;
 
+    /**
+     * @var array
+     */
     private $cars = [];
 
+    /**
+     * @param Car $car
+     */
     public function addCar(Car $car)
     {
-        $this->cars[] = $car;
+        if (true === $this->checkFreeSpace($car)) {
+            $this->cars[] = $car;
+        }
     }
 
+    /**
+     * @param Car $car
+     *
+     * @return bool
+     */
+    private function checkFreeSpace(Car $car)
+    {
+        $parkingSpace = $this->getArea();
+        foreach ($this->getCars() as $item) {
+            $parkingSpace -= $item->getSize();
+        }
+
+        return $parkingSpace - $car->getSize() >= 0;
+    }
+
+    /**
+     * @return array
+     */
     public function getCars(): array
     {
         return $this->cars;
