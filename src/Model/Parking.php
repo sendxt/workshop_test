@@ -4,6 +4,8 @@ namespace Model;
 
 class Parking
 {
+    private const SPACE_BEETWEN_CAR = 2;
+
     /**
      * @var int
      */
@@ -31,12 +33,14 @@ class Parking
      */
     private function checkFreeSpace(Car $car)
     {
-        $parkingSpace = $this->getArea();
+        $space = 0;
         foreach ($this->getCars() as $item) {
-            $parkingSpace -= $item->getSize();
+            $space += $item->getSize() + self::SPACE_BEETWEN_CAR;
         }
 
-        return $parkingSpace - $car->getSize() >= 0;
+        $space += $car->getSize() + self::SPACE_BEETWEN_CAR;
+
+        return $this->getArea() - $space >= 0;
     }
 
     /**
@@ -53,6 +57,18 @@ class Parking
     public function getArea(): int
     {
         return $this->area;
+    }
+
+    /**
+     * @param int $space
+     *
+     * @return $this
+     */
+    private function reduceArea(int $space)
+    {
+        $this->area -= $space;
+
+        return $this;
     }
 
     /**
