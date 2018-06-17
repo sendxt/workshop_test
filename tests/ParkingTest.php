@@ -38,10 +38,14 @@ class ParkingTest extends TestCase
         $car = new Car();
         $car->setSize(5);
 
+        $car2 = new Car();
+        $car2->setSize(25);
+
         $parking = new Parking();
         $parking->setArea(30);
         $parking->addCar($car);
+        $parking->addCar($car2);
 
-        $this->assertEquals($parking->getCars()[0], $car);
+        $this->assertCount(1, $parking->getCars());
     }
 }
