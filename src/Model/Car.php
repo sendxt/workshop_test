@@ -4,7 +4,7 @@ namespace Model;
 
 class Car
 {
-    private $title;
+    private $number;
     private $size;
 
     /**
@@ -30,19 +30,19 @@ class Car
     /**
      * @return string
      */
-    public function getTitle(): string
+    public function getNumber(): string
     {
-        return $this->title;
+        return $this->number;
     }
 
     /**
-     * @param $title
+     * @param string $number
      *
      * @return Car
      */
-    public function setTitle($title): self
+    public function setNumber(string $number): self
     {
-        $this->title = $title;
+        $this->number = $number;
 
         return $this;
     }
