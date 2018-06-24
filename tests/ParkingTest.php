@@ -32,7 +32,7 @@ class ParkingTest extends TestCase
     {
         return [
             [30, 30],
-            [-30, -30],
+            [300, 300],
         ];
     }
 }
