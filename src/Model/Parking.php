@@ -2,9 +2,11 @@
 
 namespace Model;
 
+use Calculator\ParkingSpaceCalculating;
+
 class Parking
 {
-    private const SPACE_BEETWEN_CAR = 2;
+    public const SPACE_BEETWEN_CAR = 2;
 
     /**
      * @var
@@ -109,7 +111,9 @@ class Parking
      */
     public function addCar(Car $car)
     {
-        $this->cars[] = $car;
+        if (true === ParkingSpaceCalculating::calculate($this, $car)) {
+            $this->cars[] = $car;
+        }
     }
 
     /**
