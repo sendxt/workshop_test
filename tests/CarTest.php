@@ -24,6 +24,6 @@ class CarTest extends TestCase
         $car2->setSize(100);
 
         $this->assertEquals(10, $car->getSize());
-        $this->assertEquals(1000, $car->getSize());
+        $this->assertEquals(100, $car2->getSize());
     }
 }
