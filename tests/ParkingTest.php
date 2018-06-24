@@ -19,9 +19,7 @@ class ParkingTest extends TestCase
 
     public function testCorrectSpace()
     {
-        $parking = new Parking();
-        $parking->setWidth(30);
-        $parking->height(30);
+        $parking = new Parking(30, 30);
 
         $this->assertEquals(30, $parking->getWidth());
         $this->assertEquals(30, $parking->getHeight());
