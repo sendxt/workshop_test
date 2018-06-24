@@ -23,7 +23,7 @@ class CarTest extends TestCase
      */
     public function testGetSize($width, $height)
     {
-        $car = new Car($width, $height);
+        $car = new Car('GRV020', $width, $height);
 
         $this->assertEquals($width, $car->getWidth());
         $this->assertEquals($height, $car->getHeight());
