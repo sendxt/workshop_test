@@ -11,11 +11,17 @@ class Parking
     /**
      * Parking constructor.
      *
-     * @param int $width
-     * @param int $height
+     * @param int|null $width
+     * @param int|null $height
+     *
+     * @throws \Exception
      */
     public function __construct(int $width = null, int $height = null)
     {
+        if ($width < 0 || $height < 0) {
+            throw new \InvalidArgumentException();
+        }
+
         $this->width = $width;
         $this->height = $height;
     }
