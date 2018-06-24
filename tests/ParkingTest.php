@@ -17,11 +17,22 @@ class ParkingTest extends TestCase
         $this->assertEquals('Europa', $parking->getTitle());
     }
 
-    public function testCorrectSpace()
+    /**
+     * @dataProvider correctSpaceProvider
+     */
+    public function testCorrectSpace($width, $height)
     {
-        $parking = new Parking(30, 30);
+        $parking = new Parking($width, $height);
 
-        $this->assertEquals(30, $parking->getWidth());
-        $this->assertEquals(30, $parking->getHeight());
+        $this->assertEquals($width, $parking->getWidth());
+        $this->assertEquals($height, $parking->getHeight());
+    }
+
+    public function correctSpaceProvider()
+    {
+        return [
+            [30, 30],
+            [-30, -30],
+        ];
     }
 }
