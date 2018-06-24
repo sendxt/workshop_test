@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests;
 
+use Model\Car;
 use PHPUnit\Framework\TestCase;
 use Model\Parking;
 
@@ -26,6 +27,16 @@ class ParkingTest extends TestCase
 
         $this->assertEquals($width, $parking->getWidth());
         $this->assertEquals($height, $parking->getHeight());
+    }
+
+    public function testAddCar()
+    {
+        $parking = new Parking(200, 200);
+        $car = new Car('GRV020', 20, 20);
+
+        $parking->addCar($car);
+
+        $this->assertCount(1, $parking->getCars());
     }
 
     public function spaceProvider()
