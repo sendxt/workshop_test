@@ -18,7 +18,7 @@ class ParkingTest extends TestCase
     }
 
     /**
-     * @dataProvider correctSpaceProvider
+     * @dataProvider spaceProvider
      */
     public function testCorrectSpace($width, $height)
     {
@@ -28,7 +28,7 @@ class ParkingTest extends TestCase
         $this->assertEquals($height, $parking->getHeight());
     }
 
-    public function correctSpaceProvider()
+    public function spaceProvider()
     {
         return [
             [30, 30],

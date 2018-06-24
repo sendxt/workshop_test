@@ -15,15 +15,22 @@ class CarTest extends TestCase
         $this->assertEquals('BMW', $car->getTitle());
     }
 
-    public function testGetSize()
+    /**
+     * @dataProvider sizeProvider
+     */
+    public function testGetSize($size)
     {
         $car = new Car();
-        $car->setSize(10);
+        $car->setSize($size);
 
-        $car2 = new Car();
-        $car2->setSize(100);
+        $this->assertEquals($size, $car->getSize());
+    }
 
-        $this->assertEquals(10, $car->getSize());
-        $this->assertEquals(100, $car2->getSize());
+    public function sizeProvider()
+    {
+        return [
+            [10],
+            [100],
+        ];
     }
 }
