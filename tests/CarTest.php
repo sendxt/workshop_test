@@ -7,12 +7,15 @@ use PHPUnit\Framework\TestCase;
 
 class CarTest extends TestCase
 {
-    public function testGetTitle()
+    /**
+     * @dataProvider numberProvider
+     */
+    public function testGetNumber($number)
     {
         $car = new Car();
-        $car->setTitle('BMW');
+        $car->setNumber($number);
 
-        $this->assertEquals('BMW', $car->getTitle());
+        $this->assertEquals($number, $car->getNumber());
     }
 
     /**
@@ -24,6 +27,14 @@ class CarTest extends TestCase
         $car->setSize($size);
 
         $this->assertEquals($size, $car->getSize());
+    }
+
+    public function numberProvider()
+    {
+        return [
+            ['GRV020'],
+            ['EVO020'],
+        ];
     }
 
     public function sizeProvider()
