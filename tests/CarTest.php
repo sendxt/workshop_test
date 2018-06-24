@@ -21,12 +21,12 @@ class CarTest extends TestCase
     /**
      * @dataProvider sizeProvider
      */
-    public function testGetSize($size)
+    public function testGetSize($width, $height)
     {
-        $car = new Car();
-        $car->setSize($size);
+        $car = new Car($width, $height);
 
-        $this->assertEquals($size, $car->getSize());
+        $this->assertEquals($width, $car->getWidth());
+        $this->assertEquals($height, $car->getHeight());
     }
 
     public function numberProvider()
@@ -40,8 +40,8 @@ class CarTest extends TestCase
     public function sizeProvider()
     {
         return [
-            [10],
-            [100],
+            [10, 10],
+            [100, 100],
         ];
     }
 }
