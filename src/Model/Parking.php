@@ -4,9 +4,25 @@ namespace Model;
 
 class Parking
 {
+    /**
+     * @var
+     */
     private $title;
+
+    /**
+     * @var int|int|null
+     */
     private $width;
+
+    /**
+     * @var int|int|null
+     */
     private $height;
+
+    /**
+     * @var array
+     */
+    private $cars = [];
 
     /**
      * Parking constructor.
@@ -84,5 +100,21 @@ class Parking
         $this->height = $height;
 
         return $this;
+    }
+
+    /**
+     * @param Car $car
+     */
+    public function addCar(Car $car)
+    {
+        $this->cars[] = $car;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCars(): array
+    {
+        return $this->cars;
     }
 }

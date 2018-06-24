@@ -33,10 +33,12 @@ class ParkingTest extends TestCase
     {
         $parking = new Parking(200, 200);
         $car = new Car('GRV020', 20, 20);
+        $car2 = new Car('GRV030', 20, 20);
 
         $parking->addCar($car);
+        $parking->addCar($car2);
 
-        $this->assertCount(1, $parking->getCars());
+        $this->assertCount(2, $parking->getCars());
     }
 
     public function spaceProvider()
