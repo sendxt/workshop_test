@@ -4,6 +4,8 @@ namespace Model;
 
 class Parking
 {
+    private const SPACE_BEETWEN_CAR = 2;
+
     /**
      * @var
      */
