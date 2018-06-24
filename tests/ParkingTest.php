@@ -9,11 +9,21 @@ use Model\Parking;
 
 class ParkingTest extends TestCase
 {
-    public function testGetArea()
+    public function testGetTitle()
     {
         $parking = new Parking();
         $parking->setTitle('Europa');
 
         $this->assertEquals('Europa', $parking->getTitle());
+    }
+
+    public function testCorrectSpace()
+    {
+        $parking = new Parking();
+        $parking->setWidth(30);
+        $parking->height(30);
+
+        $this->assertEquals(30, $parking->getWidth());
+        $this->assertEquals(30, $parking->getHeight());
     }
 }
